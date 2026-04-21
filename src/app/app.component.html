@@ -1,4 +1,28 @@
 <app-header></app-header>
-<div id="main-content">
-  <router-outlet></router-outlet>
-</div>
+
+<mat-sidenav-container class="main-container">
+  <mat-sidenav #sidenav mode="side" opened class="side-menu">
+    <mat-nav-list>
+      <div class="menu-label">GERENCIAMENTO</div>
+
+      <a mat-list-item routerLink="/turma" routerLinkActive="active-menu">
+        <mat-icon matListItemIcon>groups</mat-icon>
+        <span matListItemTitle>Turmas</span>
+      </a>
+
+      <a mat-list-item routerLink="/aluno" routerLinkActive="active-menu">
+        <mat-icon matListItemIcon>person</mat-icon>
+        <span matListItemTitle>Alunos</span>
+      </a>
+
+      <a mat-list-item routerLink="/matricula" routerLinkActive="active-menu">
+        <mat-icon matListItemIcon>assignment</mat-icon>
+        <span matListItemTitle>Matrículas</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content id="main-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
